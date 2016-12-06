@@ -55,8 +55,6 @@ public class PizzaApp extends JFrame
 	private JCheckBox m_CheckBox;
 	/** Text button */
 	private JButton m_TextButton;
-	/** Image button */
-	private JButton m_ImageButton;
 	/** Status label */
 	private JLabel m_StatusLabel;
 	/** Status text field */
@@ -109,7 +107,7 @@ public class PizzaApp extends JFrame
 		m_RadioButton1 = new JRadioButton("Normal");
 		m_RadioButton1.setSize(120, 20);
 		m_RadioButton1.setLocation(5, 0);
-		m_RadioButton1.setSelected(true);
+		m_RadioButton1.setSelected(false);
 		m_RadioButton1.setBackground(Color.lightGray);
 		m_RadioButton1.addActionListener(
 				new ActionListener()

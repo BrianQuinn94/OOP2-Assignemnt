@@ -8,9 +8,9 @@ import java.awt.event.MouseAdapter;
 import javax.swing.ToolTipManager;
 
 public class StartMenu extends JFrame implements ActionListener{
-		JMenu UserMenu;
-		JLabel response;
-		JButton button; 
+		private JMenu UserMenu;
+		private JLabel response;
+		private JButton button; 
 		
 			
     public static void main(String[] args){
