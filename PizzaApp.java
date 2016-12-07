@@ -76,11 +76,11 @@ public class PizzaApp extends JFrame
 
 	PizzaApp()
 	{
-		// Set window characteristics
+		/** Set window characteristics*/
 		this.setSize(640, 480);
 		this.setTitle("Pizza");
 		
-		// Create the main widget panel
+		/** Create the main widget panel*/
 		m_MainPanel = new JPanel();
 		m_MainPanel.setLayout(null);
 		m_MainPanel.setSize(this.getContentPane().getSize().width,
@@ -88,7 +88,7 @@ public class PizzaApp extends JFrame
 		m_MainPanel.setBackground(Color.RED);
 		this.getContentPane().add(m_MainPanel);
 		
-		// Create the panel to hold the radio buttons
+		/** Create the panel to hold the radio buttons*/
 		m_RBPan = new JPanel();
 		m_RBPan.setLayout(null);
 		m_RBPan.setSize(130, 50);
@@ -97,13 +97,13 @@ public class PizzaApp extends JFrame
 		m_RBPan.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
 		m_MainPanel.add(m_RBPan);
 		
-		// Place a label just above the panel
+		/** Place a label just above the panel */
 		m_RBLabel = new JLabel("Size");
 		m_RBLabel.setSize(110, 10);
 		m_RBLabel.setLocation(55, 25);
 		m_MainPanel.add(m_RBLabel);
 
-		// Create radio button 1
+		/** Create radio button 1 */
 		m_RadioButton1 = new JRadioButton("Normal");
 		m_RadioButton1.setSize(120, 20);
 		m_RadioButton1.setLocation(5, 0);
@@ -127,7 +127,7 @@ public class PizzaApp extends JFrame
 				});
 		m_RBPan.add(m_RadioButton1);
 		
-		// Create the show both types radio button
+		/** Create the show both types radio button */
 		m_RadioButton2 = new JRadioButton("Large");
 		m_RadioButton2.setSize(120, 20);
 		m_RadioButton2.setLocation(5, 20);
@@ -151,19 +151,19 @@ public class PizzaApp extends JFrame
 				});
 		m_RBPan.add(m_RadioButton2);
 		
-		// Create the button group and add the buttons
+		/** Create the button group and add the buttons */
 		m_RBGroup = new ButtonGroup();
 		m_RBGroup.add(m_RadioButton1); 
 		m_RBGroup.add(m_RadioButton2);
 		
 
-		// Create the label for the status Check Box
+		/** Create the label for the status Check Box */
 				m_StatusLabel = new JLabel("Extra Toppings");
 				m_StatusLabel.setSize(110, 18);
 				m_StatusLabel.setLocation(405, 75);
 				m_MainPanel.add(m_StatusLabel);
 				
-		// Create the check box
+		/** Create the check box */
 		m_CheckBox = new JCheckBox();
 		m_CheckBox.setSize(120, 12);
 		m_CheckBox.setBackground(Color.LIGHT_GRAY);
@@ -179,7 +179,7 @@ public class PizzaApp extends JFrame
 					}
 				});
 		m_MainPanel.add(m_CheckBox);
-		// Create the check box
+		/** Create the check box */
 				m_CheckBox = new JCheckBox();
 				m_CheckBox.setSize(120, 12);
 				m_CheckBox.setBackground(Color.LIGHT_GRAY);
@@ -195,7 +195,7 @@ public class PizzaApp extends JFrame
 							}
 						});
 				m_MainPanel.add(m_CheckBox);
-				// Create the check box
+				/** Create the check box */
 				m_CheckBox = new JCheckBox();
 				m_CheckBox.setSize(120, 12);
 				m_CheckBox.setBackground(Color.LIGHT_GRAY);
@@ -211,7 +211,7 @@ public class PizzaApp extends JFrame
 							}
 						});
 				m_MainPanel.add(m_CheckBox);
-				// Create the check box
+				/** Create the check box */
 				m_CheckBox = new JCheckBox();
 				m_CheckBox.setSize(120, 12);
 				m_CheckBox.setBackground(Color.LIGHT_GRAY);
@@ -227,7 +227,7 @@ public class PizzaApp extends JFrame
 							}
 						});
 				m_MainPanel.add(m_CheckBox);
-		// Create the text button
+		/** Create the text button */
 		m_TextButton = new JButton("Order");
 		m_TextButton.setSize(200, 40);
 		m_TextButton.setLocation(400, 350);
@@ -239,20 +239,20 @@ public class PizzaApp extends JFrame
 					{
 						
 						total = size + (toppings * 2) + pizza;
-						//	Print message in status text field
+						/**	Print message in status text field */
 						m_StatusTF.setText("your total is: " + total);
 					}
 				});
 		m_MainPanel.add(m_TextButton);	
 		
 		
-		// Create the label for the status text field
+		/** Create the label for the status text field */
 		m_StatusLabel = new JLabel("Status");
 		m_StatusLabel.setSize(110, 18);
 		m_StatusLabel.setLocation(50, 400);
 		m_MainPanel.add(m_StatusLabel);
 		
-		// Create the Status text field
+		/** Create the Status text field */
 		m_StatusTF = new JTextField();
 		m_StatusTF.setSize(350, 20);
 		m_StatusTF.setLocation(100, 400);
@@ -261,13 +261,13 @@ public class PizzaApp extends JFrame
 		m_StatusTF.setBackground(Color.WHITE);
 		m_MainPanel.add(m_StatusTF);
 		
-		// Create the label above the list box
+		/** Create the label above the list box */
 		m_ListboxLabel = new JLabel("Pizza");
 		m_ListboxLabel.setSize(75, 18);
 		m_ListboxLabel.setLocation(50, 100);
 		m_MainPanel.add(m_ListboxLabel);
 		
-		// Create the List widget
+		/** Create the List widget */
 		m_List = new JList();
 		m_List.setSize(150, 100);
 		m_List.addListSelectionListener(
@@ -275,12 +275,12 @@ public class PizzaApp extends JFrame
 				{
 					public void valueChanged(ListSelectionEvent e)
 					{
-						//	Print message in status text field
+						/**	Print message in status text field */
 						m_StatusTF.setText((String)(m_List.getModel().
 								getElementAt(m_List.getSelectedIndex())));
 					}
 				});
-		// Create a Vector of strings to add to the list
+		/** Create a Vector of strings to add to the list */
 		Vector listData = new Vector();
 		listData.add(new String("Margherita"));
 		listData.add(new String("Pepperoni"));
@@ -288,13 +288,13 @@ public class PizzaApp extends JFrame
 		listData.add(new String("Hawaian"));
 		m_List.setListData(listData);
 		
-		// Put the list inside of a JScrollPane so we can scroll it
+		/** Put the list inside of a JScrollPane so we can scroll it */
 		m_ListSP = new JScrollPane(m_List);
 		m_ListSP.setSize(150, 150);
 		m_ListSP.setLocation(50, 125);
 		m_MainPanel.add(m_ListSP);
 		
-		// Create the exit button
+		/** Create the exit button */
 		m_ExitButton = new JButton("Exit");
 		m_ExitButton.setSize(75, 20);
 		m_ExitButton.setLocation(500, 400);
@@ -304,12 +304,12 @@ public class PizzaApp extends JFrame
 				{
 					public void actionPerformed(ActionEvent e)
 					{
-						// Exit the application with status=0 (normal exit)
+						/** Exit the application with status=0 (normal exit) */
 						System.exit(0);
 					}
 				});
 		m_MainPanel.add(m_ExitButton);
-		this.setVisible(true);  // Show the window
+		this.setVisible(true);  /** Show the window */
 	}
 	
 	public static void main(String[] args) 
